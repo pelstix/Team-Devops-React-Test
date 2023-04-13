@@ -24,3 +24,4 @@ function App() {
 }
 
 export default App;
+//I am not a Javascript developer
