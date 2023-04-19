@@ -1,15 +1,12 @@
 trigger:
 - master
-          
+
 pr: none
 
 variables:
 
   # We build on linux to remove any dependancies on windows stuff / can move to GCP or AWS
   vmImageName: 'ubuntu-latest'
-
-  # A sample url to be consumed from the react app as environment variable
-  apiDomain: 'http://dummy.restapiexample.com/api/v1/'
 
 stages:
   - stage: Build
@@ -29,7 +26,8 @@ stages:
           - script: |
               yarn install
               yarn build
-            displayName: 'npm install, build
+            displayName: 'npm install, build'
+            
           - task: CopyFiles@2
             inputs:
               SourceFolder: '$(System.DefaultWorkingDirectory)/build/'
