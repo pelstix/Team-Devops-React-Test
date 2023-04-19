@@ -32,9 +32,9 @@ stages:
             displayName: 'npm install, build
           - task: CopyFiles@2
             inputs:
-              SourceFolder: '$(System.DefaultWorkingDirectory)/*'
+              SourceFolder: '$(System.DefaultWorkingDirectory)/build/*'
               Contents: |
-                $(System.DefaultWorkingDirectory)/*
+                $(System.DefaultWorkingDirectory)/build/**/*
               TargetFolder: '$(Build.ArtifactStagingDirectory)/output-site'
             displayName: 'Copy site files to artifact directory'
 
